@@ -11,6 +11,7 @@ const navigationItems  =()=>(
             <NavigationItem link="/login">Login</NavigationItem>
             <NavigationItem link="/signup">SignUp</NavigationItem>
             <NavigationItem link="/contact">Contact</NavigationItem>
+            
     </ul>
 )
 
