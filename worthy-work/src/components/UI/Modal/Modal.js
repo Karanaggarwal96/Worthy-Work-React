@@ -14,7 +14,9 @@ state={
 }
 subHandler=()=>{
 
-    const data={
+      this.setState({formsubmit:true})
+    
+        const data={
         pickup:this.state.pickup,
         drop:this.state.drop,
         contact:this.state.contact,
@@ -24,7 +26,7 @@ subHandler=()=>{
     axios.post('/rideshare.json',data)
     .then(response=>console.log(response))
     .catch(error=>console.log(error))
-    this.setState({formsubmit:true})
+    
 }
 render(){
 return(
@@ -49,7 +51,7 @@ return(
 </select>
 <br></br>
 
-<button type="submit" onClick={this.subHandler} sub={this.state.formsubmit}>Submit </button>
+<button  onClick={this.subHandler} >Submit </button>
 </form>
 
 </div>
