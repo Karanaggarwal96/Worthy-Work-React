@@ -9,11 +9,12 @@ state={
     drop:'',
     contact:'',
     date:'',
-    status:'',
+    desc:'',
     formsubmit:false
 }
 subHandler=()=>{
 
+      
       this.setState({formsubmit:true})
     
         const data={
@@ -21,7 +22,7 @@ subHandler=()=>{
         drop:this.state.drop,
         contact:this.state.contact,
         date:this.state.date,
-        status:this.state.status
+        desc:this.state.desc
     }
     axios.post('/rideshare.json',data)
     .then(response=>console.log(response))
@@ -41,17 +42,19 @@ return(
 <input type="text" value={this.state.drop}  onChange={(event) => this.setState({drop: event.target.value})}/>
 <label>Enter Date</label>
 <input type="date" value={this.state.date}  onChange={(event) => this.setState({date: event.target.value})}/>
+<label>Description</label>
+<input type="text" value={this.state.desc}  onChange={(event) => this.setState({desc: event.target.value})}/>
 <label>Contact Details</label>
 <input type="text" value={this.state.contact}  onChange={(event) => this.setState({contact: event.target.value})}/>
-<label>Status</label>
+{/* <label>Status</label>
 <select value={this.state.status} onChange={(event) => this.setState({status: event.target.value})} >
     <option>Pending</option>
     <option>Confirmed</option>
     <option>Rejected</option>
-</select>
+</select> */}
 <br></br>
 
-<button  onClick={this.subHandler} >Submit </button>
+<button  onClick={this.subHandler}  >Submit </button>
 </form>
 
 </div>
